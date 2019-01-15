@@ -5,10 +5,9 @@ import {
     TouchableHighlight,
     ImageBackground,
     PanResponder,
+    SafeAreaView,
     StyleSheet,
-    Touchable,
     Animated,
-    Platform,
     Easing,
     Image,
     View,
@@ -1129,10 +1128,12 @@ export default class VideoPlayer extends Component {
 
                         source={ this.props.source }
                     />
-                    { this.renderError() }
-                    { this.renderTopControls() }
-                    { this.renderLoader() }
-                    { this.renderBottomControls() }
+                    <SafeAreaView style={{ flex: 1 }}>
+                        { this.renderError() }
+                        { this.renderTopControls() }
+                        { this.renderLoader() }
+                        { this.renderBottomControls() }
+                    </SafeAreaView>
                 </View>
             </TouchableWithoutFeedback>
         );
