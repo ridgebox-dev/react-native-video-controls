@@ -870,14 +870,14 @@ export default class VideoPlayer extends Component {
                     source={ require( './assets/img/top-vignette.png' ) }
                     style={[ styles.controls.column ]}
                     imageStyle={[ styles.controls.vignette ]}>
-                    <View style={ styles.controls.topControlGroup }>
+                    <SafeAreaView style={ styles.controls.topControlGroup }>
                         { backControl }
                         <View style={ styles.controls.pullRight }>
                             { volumeControl }
                             { this.props.children }
                             { fullscreenControl }
                         </View>
-                    </View>
+                    </SafeAreaView>
                 </ImageBackground>
             </Animated.View>
         );
@@ -961,7 +961,7 @@ export default class VideoPlayer extends Component {
                     style={[ styles.controls.column ]}
                     imageStyle={[ styles.controls.vignette ]}>
                     { seekbarControl }
-                    <View style={[
+                    <SafeAreaView style={[
                         styles.controls.row,
                         styles.controls.bottomControlGroup
                     ]}>
@@ -969,7 +969,7 @@ export default class VideoPlayer extends Component {
                         { this.renderTitle() }
                         { timerControl }
 
-                    </View>
+                    </SafeAreaView>
                 </ImageBackground>
             </Animated.View>
         );
@@ -1128,12 +1128,10 @@ export default class VideoPlayer extends Component {
 
                         source={ this.props.source }
                     />
-                    <SafeAreaView style={{ flex: 1 }}>
-                        { this.renderError() }
-                        { this.renderTopControls() }
-                        { this.renderLoader() }
-                        { this.renderBottomControls() }
-                    </SafeAreaView>
+                    { this.renderError() }
+                    { this.renderTopControls() }
+                    { this.renderLoader() }
+                    { this.renderBottomControls() }
                 </View>
             </TouchableWithoutFeedback>
         );
