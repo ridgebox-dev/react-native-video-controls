@@ -875,6 +875,7 @@ export default class VideoPlayer extends Component {
                         { backControl }
                         <View style={ styles.controls.pullRight }>
                             { volumeControl }
+                            { this.props.children }
                             { fullscreenControl }
                         </View>
                     </View>
