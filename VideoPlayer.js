@@ -1102,6 +1102,7 @@ export default class VideoPlayer extends Component {
      * Provide all of our options and render the whole component.
      */
     render() {
+        const { children, ...props } = this.props;
         return (
             <TouchableWithoutFeedback
                 onPress={ this.events.onScreenTouch }
@@ -1109,7 +1110,7 @@ export default class VideoPlayer extends Component {
             >
                 <View style={[ styles.player.container, this.styles.containerStyle ]}>
                     <Video
-                        { ...this.props }
+                        { ...props }
                         ref={ videoPlayer => this.player.ref = videoPlayer }
 
                         resizeMode={ this.state.resizeMode }
