@@ -833,6 +833,7 @@ export default class VideoPlayer extends Component {
                     styles.controls.control,
                     style
                 ]}
+                hitSlop={{ top: 12, right: 12, bottom: 12, left: 12 }}
             >
                 { children }
             </TouchableHighlight>
